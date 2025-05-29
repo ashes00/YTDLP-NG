@@ -4,6 +4,8 @@
 
 This project was created with significant assistance from an AI Language Model, demonstrating a collaborative approach to building practical software.
 
+This project does NOT distribute the YT-DLP program!  You will need to secure that piece of software yourself, but thats easily done from  [official yt-dlp repository](https://github.com/yt-dlp/yt-dlp#installation)
+
 ![YTDLP-NG Screenshot](images/screenshot.png)
 
 ## The Best Selling Point: Custom Merging
