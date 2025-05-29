@@ -1,0 +1,17 @@
+# PyInstaller
+/dist/
+/build/
+*.spec
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# YTDLP-NG specific configuration (optional, uncomment if you don't want to track it)
+# ytdlpng_config.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
