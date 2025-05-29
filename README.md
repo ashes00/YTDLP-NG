@@ -51,19 +51,19 @@ This is the primary feature of YTDLP-NG.
 
 4.  **Identify Streams:** Look through the list for the streams labeled `[Video Only]` and `[Audio Only]`.
 
-5.  **Select Streams:** Click on one Audio Only stream, and one Video-Only stream to select:
+5.  **Select Streams:** Click on the Audio Only stream that meets your needs, and Click on the Video-Only stream that offers the video features you are looking for (Max Resolution) to select:
     * The single best **`[Video Only]`** stream you want (e.g., the one with the highest resolution).
     * The single best **`[Audio Only]`** stream you want (e.g., the one with the highest bitrate).
     * You should have exactly two items selected.
 
-6.  **Merge and Download:** Click the **"Merge Selected Video + Audio"** button. The application will download both parts and `ffmpeg` will merge them into a high-quality MP4 file in your download directory.
+6.  **Merge and Download:** Click the **"Custom Video+Audio Merge (MP4)"** option. The application will download both parts and `ffmpeg` will merge them into a high-quality MP4 file in your download directory.
 
 ### **Workflow 2: Standard Downloads**
 
 7.  **Select Format(s):** Click on any number of formats you wish to download as they are.
-8.  **Download As Is:** Click the **"Download Selected As Is"** button. Each selected format will be downloaded as a separate file. The filename will include the format ID to prevent overwrites (e.g., `MyVideo.f137.mp4`).
+8.  **Download As Is:** Click the **"Select Format(s) from List "** option. Each selected format will be downloaded as a separate file. The filename will include the format ID to prevent overwrites (e.g., `MyVideo.f137.mp4`).
 
 ### **Workflow 3: Quick Audio Rip**
 
-9.  **Download MP3:** Simply click the **"Download Best Audio (MP3)"** button. No selection is needed. This will download and convert the best audio available into an MP3 file.
+9.  **Download MP3:** Simply click the **"Audio Only (best, mp3)"** option. No selection is needed. This will download and convert the best audio available into an MP3 file.
 
