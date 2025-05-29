@@ -51,7 +51,7 @@ This is the primary feature of YTDLP-NG.
 
 4.  **Identify Streams:** Look through the list for the streams labeled `[Video Only]` and `[Audio Only]`.
 
-5.  **Select Streams:** Hold **Ctrl** (or **Cmd** on Mac) and click to select:
+5.  **Select Streams:** Click on one Audio Only stream, and one Video-Only stream to select:
     * The single best **`[Video Only]`** stream you want (e.g., the one with the highest resolution).
     * The single best **`[Audio Only]`** stream you want (e.g., the one with the highest bitrate).
     * You should have exactly two items selected.
