@@ -1,117 +1,70 @@
-# YTDLP-NG
-Another Simple GUI for YT-DLP
+# YTDLP-NG: GUI Downloader
 
-# yt-dlp GUI Downloader
+**YTDLP-NG** is a user-friendly, cross-platform graphical user interface (GUI) for the powerful `yt-dlp` command-line tool. It unlocks `yt-dlp`'s most valuable features, allowing anyone to easily download the highest quality video and audio from the web without needing to touch a terminal.
 
-A simple Python Tkinter-based graphical user interface (GUI) for `yt-dlp`, allowing users to easily fetch video format information from YouTube URLs, select desired formats, and download them. It also provides a quick option to download the best available audio as an MP3.
+This project was created with significant assistance from an AI Language Model, demonstrating a collaborative approach to building practical software.
 
-This project was created with the assistance of an AI Language Model.
+![YTDLP-NG Screenshot](images/screenshot.png)
+
+## The Best Selling Point: Custom Merging
+
+Modern streaming sites like YouTube often serve the highest resolutions (e.g., 4K, 8K) as separate video-only and audio-only streams. YTDLP-NG's core feature is its ability to let you **visually select the best video stream and the best audio stream and merge them together on-the-fly** into a single, perfect-quality file. No more compromising with lower-quality, pre-packaged downloads.
 
 ## Features
 
-* **User-Friendly Interface:** Simple GUI built with Tkinter and ttk for a cleaner look.
-* **Specify `yt-dlp` Path:** Allows users to browse and set the path to their `yt-dlp` executable.
-* **Format Listing:** Fetches and displays a detailed list of all available video and audio formats for a given YouTube URL, including:
-    * Format ID
-    * Extension (e.g., mp4, webm)
-    * Resolution or Audio Bitrate
-    * FPS (Frames Per Second)
-    * Type (Video+Audio, Video Only, Audio Only)
-    * Video and Audio Codecs
-    * Approximate Filesize
-    * Format notes from `yt-dlp`
-* **Selective Download:** Users can select one or multiple formats from the list to download.
-* **Quick Audio Download:** A dedicated button to download the best available audio and convert it to MP3 format (requires FFmpeg).
-* **Download Directory Selection:** Users can specify a directory where downloaded files will be saved.
-* **Persistent Configuration:** Saves the `yt-dlp` path and download directory in a `yt_dlp_gui_config.json` file for future sessions.
-* **Status Updates:** A status bar provides feedback on current operations (fetching, downloading, errors).
-* **Cross-Platform (with caveats):** Written in Python, it should run on Linux, Windows, and macOS, provided Python and Tkinter are installed. The `creationflags` for subprocess are set to avoid console windows on Windows.
-* **Error Handling:** Basic error messages for common issues (e.g., invalid paths, network errors, `yt-dlp` failures). Detailed `yt-dlp` errors are printed to the console.
-* **Threaded Operations:** Network operations (fetching formats, downloading) are performed in separate threads to keep the GUI responsive.
+* **Custom Video/Audio Merging:** Select a high-resolution, high-framerate video-only stream and a high-bitrate audio-only stream. With one click, YTDLP-NG directs `yt-dlp` to download both and merge them into a single file.
+* **Detailed Format Listing:** Fetches and clearly displays all available formats, labeling them as `Video Only`, `Audio Only`, or `Video+Audio` for easy identification. Details include resolution, FPS, codecs, extension, and filesize.
+* **Simple, Intuitive GUI:** A clean interface built with Tkinter that makes the download process straightforward.
+* **Standard Downloads:** For simpler cases, you can still select any pre-merged format or download multiple streams as separate files.
+* **MP3 Audio Extraction:** A dedicated "Download Best Audio (MP3)" button grabs the highest quality audio available and converts it to MP3.
+* **Persistent Configuration:** Saves your `yt-dlp` executable path and preferred download directory, so you only have to set them once.
+* **Cross-Platform:** Built with Python, it runs on Linux, Windows, and macOS.
+* **Real-time Status Updates:** A status bar provides clear feedback on fetching, downloading, merging, and any errors.
+* **Threaded for Responsiveness:** All network operations run in the background, so the application never freezes while working.
 
 ## Prerequisites
 
-1.  **Python 3:** Ensure you have Python 3 installed on your system. Tkinter is usually included with standard Python installations. If not, you may need to install it separately (e.g., `sudo apt-get install python3-tk` on Debian/Ubuntu).
+1.  **Python 3:** You must have Python 3 installed. Tkinter is usually included, but on some Linux distros, you may need to install it (e.g., `sudo apt-get install python3-tk`).
 2.  **`yt-dlp` Executable:**
-    * Download the latest `yt-dlp` executable for your system (e.g., `yt-dlp_linux`, `yt-dlp.exe`) from the [official yt-dlp repository](https://github.com/yt-dlp/yt-dlp#installation).
-    * Make sure the downloaded file is executable (e.g., `chmod +x yt-dlp_linux` on Linux/macOS).
-3.  **`ffmpeg` (Recommended, especially for audio extraction):**
-    * For audio extraction (like the "Download Audio Only (Best MP3)" feature) and for `yt-dlp` to merge separate video and audio streams (often required for the highest quality formats), `ffmpeg` is necessary.
-    * Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html) and ensure it's either in your system's PATH or in the same directory as your `yt-dlp` executable.
-
-## Installation
-
-1.  **Save the Script:** Download or copy the Python script (e.g., `yt_dlp_gui.py`) to a directory on your computer.
-2.  **Place `yt-dlp`:** You can place your `yt-dlp` executable anywhere, as you will specify its path in the GUI. For convenience, you might place it in the same directory as the script or a dedicated tools directory.
-
-No further installation steps are typically required for the script itself, as it uses standard Python libraries.
+    * Download the latest `yt-dlp` executable for your OS from the [official yt-dlp repository](https://github.com/yt-dlp/yt-dlp#installation).
+    * On Linux/macOS, make it executable (`chmod +x yt-dlp_linux`).
+3.  **`ffmpeg` (Essential for Merging):**
+    * To merge video and audio streams, `ffmpeg` is **required**.
+    * Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html).
+    * Ensure the `ffmpeg` executable is placed either in your system's PATH or in the same directory as your `yt-dlp` executable so `yt-dlp` can find it automatically.
 
 ## How to Use
 
-1.  **Run the Application:**
-    Open a terminal or command prompt, navigate to the directory where you saved `yt_dlp_gui.py`, and run the script:
-    ```bash
-    python3 yt_dlp_gui.py
-    ```
-    (or `python yt_dlp_gui.py` if `python` points to Python 3).
+1.  **Save & Run:** Save the Python script as `ytdlpng.py` and run it from your terminal: `python3 ytdlpng.py`.
 
-2.  **Set `yt-dlp` Path (First Time):**
-    * The application window will open.
-    * In the "yt-dlp Executable Path" section, click the "Browse" button.
-    * Navigate to and select your `yt-dlp` executable file (e.g., `yt-dlp_linux`).
-    * This path will be saved in `yt_dlp_gui_config.json` for future use.
+2.  **Initial Setup:**
+    * The first time you run the app, click "Browse" to select your `yt-dlp` executable.
+    * Set your preferred "Download Directory". These settings are saved automatically.
 
-3.  **Set Download Directory:**
-    * In the "Download Directory" section, the application will try to default to your system's "Downloads" folder or the current working directory.
-    * You can change this by clicking "Browse" and selecting your preferred directory for saving downloaded files. This is also saved.
+3.  **Fetch Video Information:**
+    * Paste a YouTube URL into the input field and click "Fetch Formats".
+    * The listbox will populate with all available streams.
 
-4.  **Enter YouTube URL:**
-    * Paste the full URL of the YouTube video you want to download into the "YouTube Video URL" field.
+### **Workflow 1: Merging for Highest Quality (Recommended)**
 
-5.  **Fetch Formats:**
-    * Click the "Fetch Available Formats" button.
-    * The application will run `yt-dlp` in the background. The status bar will indicate it's "Fetching formats...".
-    * Once complete, the "Available Formats" listbox will populate with all detected video and audio streams.
+This is the primary feature of YTDLP-NG.
 
-6.  **Select Formats for Download:**
-    * Review the list of formats.
-    * Click on a format to select it.
-    * To select multiple formats:
-        * **Ctrl+Click** (Windows/Linux) or **Cmd+Click** (macOS) to select/deselect individual items.
-        * **Shift+Click** to select a range of items.
+4.  **Identify Streams:** Look through the list for the streams labeled `[Video Only]` and `[Audio Only]`.
+    ![Identifying Streams](https://i.imgur.com/gY9R0dD.png)
 
-7.  **Download:**
-    * **To download the selected video/audio formats:**
-        * Ensure you have one or more formats selected in the list.
-        * Click the "Download Selected" button.
-        * The status bar will show progress for each selected download. Files will be saved in your chosen download directory, with the format ID appended to the filename (e.g., `VideoTitle.137.mp4`) to differentiate them.
-    * **To download audio only (as MP3):**
-        * Click the "Download Audio Only (Best MP3)" button.
-        * This will instruct `yt-dlp` to download the best quality audio and convert it to an MP3 file. This does not require a selection from the list. The file will be named like `VideoTitle.mp3`. (Requires `ffmpeg`).
+5.  **Select Streams:** Hold **Ctrl** (or **Cmd** on Mac) and click to select:
+    * The single best **`[Video Only]`** stream you want (e.g., the one with the highest resolution).
+    * The single best **`[Audio Only]`** stream you want (e.g., the one with the highest bitrate).
+    * You should have exactly two items selected.
 
-8.  **Check Status and Output:**
-    * The status bar at the bottom of the window provides real-time updates on the application's actions.
-    * If `yt-dlp` encounters errors during fetching or downloading, a summary might be shown in the status bar or a dialog box. For complete error details, check the terminal/console window from which you launched the Python script.
+6.  **Merge and Download:** Click the **"Merge Selected Video + Audio"** button. The application will download both parts and `ffmpeg` will merge them into a high-quality MP4 file in your download directory.
 
-9.  **Closing the Application:**
-    * When you close the application window, your current `yt-dlp` path and download directory settings are automatically saved to `yt_dlp_gui_config.json`.
+### **Workflow 2: Standard Downloads**
 
-## Troubleshooting
+7.  **Select Format(s):** Click on any number of formats you wish to download as they are.
+8.  **Download As Is:** Click the **"Download Selected As Is"** button. Each selected format will be downloaded as a separate file. The filename will include the format ID to prevent overwrites (e.g., `MyVideo.f137.mp4`).
 
-* **"yt-dlp executable path is invalid"**: Ensure the path you've set for `yt-dlp` is correct and that the file is executable.
-* **"No formats found"**: The video URL might be incorrect, private, or `yt-dlp` might be blocked or outdated. Try updating `yt-dlp`.
-* **Audio download/conversion fails**: Make sure `ffmpeg` is installed and accessible by `yt-dlp` (either in PATH or same directory as `yt-dlp`).
-* **GUI freezes (unlikely but possible)**: If a download takes an extremely long time or an unexpected error occurs in the threading, the GUI might become less responsive. Check the console for errors. The application includes timeouts for operations.
-* **"yt-dlp executable not found"**: Double-check the path provided. If `yt-dlp` was moved or deleted, you'll need to set the path again.
+### **Workflow 3: Quick Audio Rip**
 
-## Contributing
-
-This is a simple utility. Suggestions for improvements or bug fixes can be made by modifying the script. Consider features like:
-* Progress bars for downloads (requires more complex parsing of `yt-dlp` output).
-* Queueing multiple URLs.
-* More advanced `yt-dlp` option integration.
-
----
-
-This README provides a comprehensive guide to using the yt-dlp GUI Downloader.
+9.  **Download MP3:** Simply click the **"Download Best Audio (MP3)"** button. No selection is needed. This will download and convert the best audio available into an MP3 file.
 
