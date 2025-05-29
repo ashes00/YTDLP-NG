@@ -50,7 +50,6 @@ Modern streaming sites like YouTube often serve the highest resolutions (e.g., 4
 This is the primary feature of YTDLP-NG.
 
 4.  **Identify Streams:** Look through the list for the streams labeled `[Video Only]` and `[Audio Only]`.
-    ![Identifying Streams](https://i.imgur.com/gY9R0dD.png)
 
 5.  **Select Streams:** Hold **Ctrl** (or **Cmd** on Mac) and click to select:
     * The single best **`[Video Only]`** stream you want (e.g., the one with the highest resolution).
