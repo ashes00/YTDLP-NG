@@ -4,7 +4,7 @@
 
 This project was created with significant assistance from an AI Language Model, demonstrating a collaborative approach to building practical software.
 
-This project does NOT distribute the YT-DLP program!  You will need to secure that piece of software yourself, but thats easily done from  [official yt-dlp repository](https://github.com/yt-dlp/yt-dlp#installation)
+This project does NOT distribute the YT-DLP program!  You will need to secure that piece of software yourself, but thats easily done from  [official yt-dlp repository](https://github.com/yt-dlp/yt-dlp#installation).
 
 ![YTDLP-NG Screenshot](images/screenshot.png)
 
@@ -33,11 +33,11 @@ Modern streaming sites like YouTube often serve the highest resolutions (e.g., 4
 3.  **`ffmpeg` (Essential for Merging):**
     * To merge video and audio streams, `ffmpeg` is **required**.
     * Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html).
-    * Ensure the `ffmpeg` executable is placed either in your system's PATH or in the same directory as your `yt-dlp` executable so `yt-dlp` can find it automatically.
+    * Ensure the `ffmpeg` executable is placed either in your system's PATH or in the same directory as your `yt-dlp` executable so `YTDLP-NG` can find it automatically.
 
 ## How to Use
 
-1.  **Save & Run:** Save the Python script as `ytdlpng.py` and run it from your terminal: `python3 ytdlpng.py`.
+1.  **Save & Run:** Save the Python script as `ytdlpng.py` and run it from your terminal: `python3 ytdlpng.py`.  Alternative you can doubel click one of the release binarys. (Linunux: AppImage, Windows: .MSI Installer)
 
 2.  **Initial Setup:**
     * The first time you run the app, click "Browse" to select your `yt-dlp` executable.
