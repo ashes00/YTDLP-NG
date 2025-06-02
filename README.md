@@ -37,7 +37,7 @@ Modern streaming sites like YouTube often serve the highest resolutions (e.g., 4
 
 ## How to Use
 
-1.  **Save & Run:** Save the Python script as `ytdlpng.py` and run it from your terminal: `python3 ytdlpng.py`.  Alternative you can doubel click one of the release binarys. (Linunux: AppImage, Windows: .MSI Installer)
+1.  **Save & Run:** Save the Python script as `ytdlpng.py` and run it from your terminal: `python3 ytdlpng.py`.  Alternative you can double click one of the release binarys. (Linux: AppImage, Windows: .MSI Installer)
 
 2.  **Initial Setup:**
     * The first time you run the app, click "Browse" to select your `yt-dlp` executable.
